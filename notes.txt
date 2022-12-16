@@ -1,0 +1,83 @@
+  const playSound = async idx => {
+    const deviceId = '81b90fca98cab60d07fb0733902198ac8cf054ac';
+    console.log('SONGS', songs);
+
+    console.log('TOKEN', token);
+    const body = {
+      context_uri: songs[idx].uri,
+      offset: {
+        position: 5,
+      },
+      position_ms: 0,
+    };
+
+    const uri2 = songs[idx];
+    const formData = new FormData();
+    formData.append('context_uri', uri2);
+    formData.append('offset', { position: 5 });
+    formData.append('position_ms', 0);
+    formData.append('device_id', deviceId);
+
+    const resp = await fetch(
+      `https://api.spotify.com/v1/me/player/play?device_id=${deviceId}`,
+      {
+        method: 'PUT',
+
+        body: formData,
+        headers: {
+          Authorization: 'Bearer ' + token,
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+      }
+    )
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+      });
+  };
+
+    const podcastHandler = () => {
+    fetch(
+      `https://api.spotify.com/v1/search?q=${searchArtistName}&type=show,episod&limit=10`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    )
+      .then(res => res.json())
+      .then(data => {
+        // if (data.error) {
+        //   localStorage.removeItem('token');
+        //   setRefresh(true);
+        // } else {
+        console.log(data, 'podcast');
+
+        //setArtistData(data.artists.items);
+
+        // }
+      });
+  };
+    const audioBooksHandler = () => {
+    fetch(
+      `https://api.spotify.com/v1/search?q=${searchArtistName}&type=audiobook&limit=5`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    )
+      .then(res => res.json())
+      .then(data => {
+        // if (data.error) {
+        //   localStorage.removeItem('token');
+        //   setRefresh(true);
+        // } else {
+        console.log(data, 'Audiobooks');
+
+        //setArtistData(data.artists.items);
+
+        // }
+      }); //https://api.spotify.com/v1/search?q=eminem&type=${type}
+  };

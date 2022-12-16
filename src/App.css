@@ -1,18 +1,44 @@
 .App {
   text-align: center;
+  background-color: gray;
 }
 
+
+.nav-bar{
+  display: flex;
+  flex-direction:row;
+  justify-content: space-around;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
+.global-layout-player{
+position: fixed;
+bottom: 0;
 
+}
+.global-layout-player2{
+  margin-top: 600px;
+  position: fixed;
+  bottom: 1;
+  
+  }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.bottom {
+  position:fixed;
+  bottom: 0;
+};​
+.btm-player{
+display: inline;
+justify-content: baseline;
 
+  
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -28,11 +54,93 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/*    */
+.row-tracks{
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: black;
+  color: green;
+}
+.parent-podcast-page{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 45px;
+
+}
+.podcast-page-content-lower{
+  border: solid;
+  background-color:rgb(66, 69, 63);
+  border-color: #282c34;
+  flex-direction: column;
+  display: flex;
+}
+.podcast-page-content{
+  flex-direction: row;
+ justify-content: space-around;
+  display: flex;
+}
+.row-items{
+  background-color: #f1f1f1;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+.parent{
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 45px;
+}
+.inner-playlist-parent{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 45px;
+}
+.inner-playlist-child{
+  border: solid;
+  background-color:rgb(66, 69, 63);
+  border-color: #282c34;
+  flex-direction: column;
+  display: flex;
+  text-align: left;
+
+}
+
+.child{
+gap: 10px;
+margin: 25px;
+}
+.but-group{
+display: flex;
+flex-direction: row-reverse;
+margin: 20px;
+}
+
+.group-1{
+display: inline-flex;
+flex-direction:column;
+margin: 5px;
+margin-top: 5px;
+
+}
+
+.artist-profile{
+display: flex;
+ justify-content: flex-start;
+float: left;
+}
+
+.btn-group-home{
+  background-color: black;
+  color: white;
+  font-size: 15px;
+  padding: 10px 60px;
+  border-radius: 5px;
+  margin: 10px 0px;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
 }
