@@ -4,7 +4,8 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useAuth } from '../hooks/UseAuth';
 import { ShowPlayList } from '../components/ShowPlayList';
-export const HomePage = () => {
+export const HomePage = props => {
+  const { setPlaylistItems } = props;
   const [homeMessage, setHomeMessage] = useState('');
   const [token, setToken] = useState('');
   const [refresh, setRefresh] = useState(false);
@@ -40,7 +41,10 @@ export const HomePage = () => {
       {!tokenJWT ? (
         <span></span>
       ) : (
-        <ShowPlayList tokenJWT={tokenJWT} />
+        <ShowPlayList
+          setPlaylistItems={setPlaylistItems}
+          tokenJWT={tokenJWT}
+        />
       )}
     </div>
   );

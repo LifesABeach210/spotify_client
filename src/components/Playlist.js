@@ -13,9 +13,9 @@ export const Playlist = props => {
       {
         method: 'POST',
         headers: {
-          Auth: jwtToken,
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
+          accept: 'application/json',
+          'content-type': 'application/json',
+          authorization: jwtToken,
         },
         body: JSON.stringify({
           playlist: newPlayList,

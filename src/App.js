@@ -68,7 +68,12 @@ function App(props) {
         />
       ),
       children: [
-        { index: true, element: <HomePage /> },
+        {
+          index: true,
+          element: (
+            <HomePage setPlaylistItems={setPlaylistItems} />
+          ),
+        },
         { path: '/login', element: <LoginPage /> },
         {
           path: '/register',

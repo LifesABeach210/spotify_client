@@ -7,7 +7,7 @@ export const ShowPlayList = props => {
   const [display, setDisplay] = useState(false);
   const [showPlayList, setShowPlayList] = useState([]);
 
-  const { tokenJWT } = props;
+  const { tokenJWT, setPlaylistItems } = props;
   const get_all_playlist = async () => {
     await fetch(`http://localhost:8888/playlist/get-playlist`, {
       method: 'GET',
@@ -42,7 +42,10 @@ export const ShowPlayList = props => {
       <div>
         {' '}
         {display ? (
-          <InnerNextLevel showPlayList={showPlayList} />
+          <InnerNextLevel
+            setPlaylistItems={setPlaylistItems}
+            showPlayList={showPlayList}
+          />
         ) : (
           <span>test</span>
         )}

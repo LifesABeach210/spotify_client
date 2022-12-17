@@ -8,7 +8,6 @@ export const DisplayQue = ({
 }) => {
   return (
     <div className='global-layout-player2'>
-      DisplayQue
       <div>
         {playlistArray.map((item, idx) => {
           return (
